@@ -1,3 +1,4 @@
+
 from Crypto.Cipher import AES
 from Crypto.Cipher import DES
 from Crypto.PublicKey import RSA
@@ -19,30 +20,21 @@ def encryptAES(plaintext, key):
 	return ciphertext
 
 def decryptAES(ciphertext, key):
-	BLOCK_SIZE = 16
-	padding = "@"
 	cipherkey = AES.new(key)
 	plaintext = cipherkey.decrypt(ciphertext)
-	plaintext = plaintext.rstrip(padding)
 	return plaintext
-
-
 
 def encryptDES(plaintext, key):
 	BLOCK_SIZE = 8
 	padding = "@"
 	plaintext = plaintext + ((BLOCK_SIZE - len(plaintext)) % BLOCK_SIZE) * padding
-	print plaintext
 	cipherkey = DES.new(key)
 	ciphertext = cipherkey.encrypt(plaintext)
 	return ciphertext
 
 def decryptDES(ciphertext, key):
-	BLOCK_SIZE = 8
-	padding = "@"
 	cipherkey = DES.new(key)
 	plaintext = cipherkey.decrypt(ciphertext)
-	plaintext = plaintext.rstrip(padding)
 	return plaintext
 
 
@@ -58,12 +50,3 @@ def decryptRSA(ciphertext, key):
 	plaintext = key.decrypt(ciphertext)
 	return plaintext
 
-
-key = os.urandom(8)
-#random_generator = Random.new().read
-#key = RSA.generate(2048, random_generator)
-text = "1234567891234567"
-e_text = encryptDES(text, key)
-#print "key: ", base64.b64encode(key)
-print "encrypted text: ", base64.b64encode(e_text)
-print decryptDES(e_text, key)
