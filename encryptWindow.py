@@ -323,6 +323,7 @@ class EncryptDialog(QDialog):
 		f = open("rsaPublicKey.txt","w+")
 		key = s.recv(65536)
 		f.write(key)
+		os.system("notify-send Encrypto: 'Key Received'")
 		f.close()
 		s.close()
 
