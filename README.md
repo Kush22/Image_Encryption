@@ -1,1 +1,1 @@
-A GUI Based Image Encryption Application (Pyhton Based)
+A GUI Based Image Encryption Application (Python Based)
