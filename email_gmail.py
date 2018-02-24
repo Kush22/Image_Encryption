@@ -9,7 +9,7 @@ def messageEmailSend(toEmailAddress, messageBody):
 
 		fromaddr = 'encrypto.app@gmail.com'
 
-		server.login(fromaddr, "encrypto@python")
+		server.login(fromaddr, "ACCOUNT_PASSWORD")
 
 		msg = MIMEMultipart()
 		msg['From'] = fromaddr
