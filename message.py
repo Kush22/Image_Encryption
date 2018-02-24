@@ -5,8 +5,8 @@ import os
 def messagePhoneSend(sendTo, messageBody):
 	try:
 		print "Send Message"
-		account = "AC07d34f729d32cb98e6e04abb4934c241"
-		token = "b47b64a495059b3455d1bde1e7d5d65d"
+		account = "DEFAULT_ACCOUNT_NUMBER"
+		token = "DEFAULT_TOKEN"
 		client = TwilioRestClient(account, token)
 
 		sendNumber = "+91"+sendTo
